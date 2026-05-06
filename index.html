@@ -567,8 +567,9 @@
 
   /* ── RESPONSIVE ── */
   @media (max-width: 768px) {
-    .sticky-cta { display: none; }
+    .sticky-cta { display: none !important; }
     body { padding-bottom: 0; }
+    .nav-cta { font-size: 12px; padding: 8px 14px; white-space: nowrap; }
     .section { padding: 48px 20px; }
     .earnings-grid { padding: 48px 20px; }
     .form-section { padding: 48px 20px; }
@@ -892,7 +893,7 @@
         <div class="social-proof-text"><strong>57 Toronto homeowners</strong> have already signed up this week</div>
       </div>
     </div>
-    <div class="form-card" id="form-card">
+    <div class="form-card" id="form-card" style="scroll-margin-top: 90px;">
       <div id="form-content">
         <h3>Claim your early access</h3>
         <p>Join the waitlist — we'll reach out before launch.</p>
