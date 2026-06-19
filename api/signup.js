@@ -66,7 +66,7 @@ export default async function handler(req, res) {
 
           <!-- Footer -->
           <div style="background: #1a3a28; padding: 20px 40px; text-align: center;">
-            <p style="margin: 0; font-size: 12px; color: rgba(255,255,255,0.5);">© 2026 SpaceNextDoor. Toronto, Canada.</p>
+            <p style="margin: 0; font-size: 12px; color: rgba(255,255,255,0.5);">© 2026 SpaceNextDoor Inc. · Toronto, Canada.</p>
           </div>
 
         </div>
