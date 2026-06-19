@@ -39,7 +39,9 @@ export default async function handler(req, res) {
 
           <!-- Header -->
           <div style="background: #1a3a28; padding: 32px 40px; text-align: center;">
-            <img src="https://www.spacenextdoor.co/spacenextdoor-logo.png" alt="SpaceNextDoor" style="height: 40px; width: auto;" />
+            <a href="https://www.spacenextdoor.co" style="display: inline-block;">
+              <img src="https://www.spacenextdoor.co/spacenextdoor-logo.png" alt="SpaceNextDoor" style="height: 40px; width: auto;" />
+            </a>
           </div>
 
           <!-- Body -->
