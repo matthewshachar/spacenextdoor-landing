@@ -35,12 +35,38 @@ export default async function handler(req, res) {
       to: email,
       subject: `You're on the list, ${firstName} 🏡`,
       html: `
-        <div style="font-family: sans-serif; max-width: 560px; margin: 0 auto; color: #1a1a1a;">
-          <p>Hi ${firstName},</p>
-          <p>Thanks for signing up — you're officially on the SpaceNextDoor waitlist.</p>
-          <p>We're launching in Toronto in September 2026, and as a founding host you'll get early access plus zero platform fees for your first 3 months.</p>
-          <p>We'll be in touch before launch with everything you need to list your space and start earning.</p>
-          <p>— The SpaceNextDoor Team</p>
+        <div style="font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; max-width: 560px; margin: 0 auto; background: #ffffff; border-radius: 12px; overflow: hidden;">
+
+          <!-- Header -->
+          <div style="background: #1a3a28; padding: 32px 40px; text-align: center;">
+            <img src="https://www.spacenextdoor.co/spacenextdoor-logo.png" alt="SpaceNextDoor" style="height: 40px; width: auto;" />
+          </div>
+
+          <!-- Body -->
+          <div style="background: #f5f4f0; padding: 40px;">
+            <h1 style="margin: 0 0 16px; font-size: 22px; font-weight: 700; color: #1a3a28;">You're on the list, ${firstName} 🏡</h1>
+            <p style="margin: 0 0 16px; font-size: 15px; line-height: 1.6; color: #333333;">Thanks for signing up — you're officially on the SpaceNextDoor waitlist.</p>
+            <p style="margin: 0 0 24px; font-size: 15px; line-height: 1.6; color: #333333;">We're launching in Toronto in September 2026, and as a founding host you'll get early access plus zero platform fees for your first 3 months.</p>
+
+            <!-- Highlight box -->
+            <div style="background: #1a3a28; border-radius: 10px; padding: 20px 24px; margin-bottom: 24px;">
+              <p style="margin: 0; font-size: 14px; font-weight: 600; color: #4aba7a;">What you get as a founding host</p>
+              <ul style="margin: 10px 0 0; padding-left: 20px; color: #ffffff; font-size: 14px; line-height: 1.8;">
+                <li>Early access before public launch</li>
+                <li>0% platform fees for your first 3 months</li>
+                <li>Priority support from our team</li>
+              </ul>
+            </div>
+
+            <p style="margin: 0 0 24px; font-size: 15px; line-height: 1.6; color: #333333;">We'll be in touch before launch with everything you need to list your space and start earning.</p>
+            <p style="margin: 0; font-size: 15px; color: #333333;">— The SpaceNextDoor Team</p>
+          </div>
+
+          <!-- Footer -->
+          <div style="background: #1a3a28; padding: 20px 40px; text-align: center;">
+            <p style="margin: 0; font-size: 12px; color: rgba(255,255,255,0.5);">© 2026 SpaceNextDoor. Toronto, Canada.</p>
+          </div>
+
         </div>
       `,
     }),
