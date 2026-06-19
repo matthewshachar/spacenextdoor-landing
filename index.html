@@ -956,9 +956,7 @@ src="https://www.facebook.com/tr?id=4343794375895742&ev=PageView&noscript=1"
           </div>
         </div>
 
-        <!-- REPLACE ACTION with your Google Form URL -->
-        <!-- Format: https://docs.google.com/forms/d/e/YOUR_FORM_ID/formResponse -->
-        <form id="host-form" action="https://docs.google.com/forms/d/e/1FAIpQLSfCpGPP7Ix4lILvHbfAlR1d2ccVIN87mOSDGE4ibIGEAhHYhw/formResponse" method="POST" target="hidden-iframe" onsubmit="handleSubmit(event)">
+        <form id="host-form" onsubmit="handleSubmit(event)">
 
           <div class="form-row">
             <div class="form-group">
@@ -1038,12 +1036,31 @@ src="https://www.facebook.com/tr?id=4343794375895742&ev=PageView&noscript=1"
     });
   }
 
-  function handleSubmit(e) {
+  async function handleSubmit(e) {
+    e.preventDefault();
     fbq('track', 'Lead');
-    setTimeout(() => {
-      document.getElementById('form-content').style.display = 'none';
-      document.getElementById('success-state').classList.add('show');
-    }, 500);
+
+    const form = document.getElementById('host-form');
+    const data = {
+      firstName: form.querySelector('#first').value,
+      lastName: form.querySelector('#last').value,
+      email: form.querySelector('#email').value,
+      neighbourhood: form.querySelector('#neighbourhood').value,
+      spaceType: form.querySelector('#space-type').value,
+    };
+
+    try {
+      await fetch('/api/signup', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(data),
+      });
+    } catch (err) {
+      console.error('Signup error:', err);
+    }
+
+    document.getElementById('form-content').style.display = 'none';
+    document.getElementById('success-state').classList.add('show');
   }
 
   // Smooth scroll for anchor links
