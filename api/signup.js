@@ -21,7 +21,7 @@ export default async function handler(req, res) {
   await fetch(
     'https://docs.google.com/forms/d/e/1FAIpQLSfCpGPP7Ix4lILvHbfAlR1d2ccVIN87mOSDGE4ibIGEAhHYhw/formResponse',
     { method: 'POST', body: googleFormData }
-  ).catch(() => {}); // non-blocking — don't fail if Google Forms is slow
+  ).catch((err) => console.error('Google Forms submission failed:', { firstName, lastName, email, neighbourhood, spaceType }, err));
 
   // Send confirmation email via Resend
   const emailRes = await fetch('https://api.resend.com/emails', {
