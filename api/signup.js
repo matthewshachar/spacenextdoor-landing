@@ -9,19 +9,33 @@ export default async function handler(req, res) {
     return res.status(400).json({ error: 'Missing required fields' });
   }
 
-  // Forward to Google Forms
-  const googleFormData = new URLSearchParams({
-    'entry.1562598964': firstName,
-    'entry.1831501118': lastName,
-    'entry.695596673': email,
-    'entry.1902104790': neighbourhood,
-    'entry.848521825': spaceType,
-  });
+  // Write to Google Sheets via API
+  try {
+    const token = await getAccessToken();
+    const spreadsheetId = process.env.GOOGLE_SPREADSHEET_ID;
+    const timestamp = new Date().toISOString();
 
-  await fetch(
-    'https://docs.google.com/forms/d/e/1FAIpQLSfCpGPP7Ix4lILvHbfAlR1d2ccVIN87mOSDGE4ibIGEAhHYhw/formResponse',
-    { method: 'POST', body: googleFormData }
-  ).catch((err) => console.error('Google Forms submission failed:', { firstName, lastName, email, neighbourhood, spaceType }, err));
+    const sheetRes = await fetch(
+      `https://sheets.googleapis.com/v4/spreadsheets/${spreadsheetId}/values/A1:append?valueInputOption=RAW&insertDataOption=INSERT_ROWS`,
+      {
+        method: 'POST',
+        headers: {
+          'Authorization': `Bearer ${token}`,
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          values: [[timestamp, firstName, lastName, email, neighbourhood, spaceType]],
+        }),
+      }
+    );
+
+    if (!sheetRes.ok) {
+      const err = await sheetRes.json();
+      console.error('Google Sheets error:', { firstName, lastName, email, neighbourhood, spaceType }, err);
+    }
+  } catch (err) {
+    console.error('Google Sheets exception:', { firstName, lastName, email, neighbourhood, spaceType }, err);
+  }
 
   // Send confirmation email via Resend
   const emailRes = await fetch('https://api.resend.com/emails', {
@@ -81,4 +95,52 @@ export default async function handler(req, res) {
   }
 
   return res.status(200).json({ success: true });
+}
+
+async function getAccessToken() {
+  const email = process.env.GOOGLE_SERVICE_ACCOUNT_EMAIL;
+  const key = process.env.GOOGLE_PRIVATE_KEY.replace(/\\n/g, '\n');
+
+  const now = Math.floor(Date.now() / 1000);
+  const payload = {
+    iss: email,
+    scope: 'https://www.googleapis.com/auth/spreadsheets',
+    aud: 'https://oauth2.googleapis.com/token',
+    exp: now + 3600,
+    iat: now,
+  };
+
+  const header = { alg: 'RS256', typ: 'JWT' };
+  const encode = obj => Buffer.from(JSON.stringify(obj)).toString('base64url');
+  const unsigned = `${encode(header)}.${encode(payload)}`;
+
+  const cryptoKey = await crypto.subtle.importKey(
+    'pkcs8',
+    pemToBuffer(key),
+    { name: 'RSASSA-PKCS1-v1_5', hash: 'SHA-256' },
+    false,
+    ['sign']
+  );
+
+  const signature = await crypto.subtle.sign('RSASSA-PKCS1-v1_5', cryptoKey, Buffer.from(unsigned));
+  const jwt = `${unsigned}.${Buffer.from(signature).toString('base64url')}`;
+
+  const tokenRes = await fetch('https://oauth2.googleapis.com/token', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+    body: new URLSearchParams({
+      grant_type: 'urn:ietf:params:oauth:grant-type:jwt-bearer',
+      assertion: jwt,
+    }),
+  });
+
+  const { access_token } = await tokenRes.json();
+  return access_token;
+}
+
+function pemToBuffer(pem) {
+  const base64 = pem.replace(/-----BEGIN PRIVATE KEY-----/, '')
+    .replace(/-----END PRIVATE KEY-----/, '')
+    .replace(/\s/g, '');
+  return Buffer.from(base64, 'base64');
 }
