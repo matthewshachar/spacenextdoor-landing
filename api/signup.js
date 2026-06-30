@@ -75,6 +75,14 @@ export default async function handler(req, res) {
             </div>
 
             <p style="margin: 0 0 24px; font-size: 15px; line-height: 1.6; color: #333333;">We'll be in touch before launch with everything you need to list your space and start earning.</p>
+
+            <!-- CTA button -->
+            <div style="text-align: center; margin: 0 0 24px;">
+              <a href="https://www.spacenextdoor.co" style="display: inline-block; background: #1a3a28; border-radius: 50px; padding: 14px 32px; text-decoration: none;">
+                <img src="https://www.spacenextdoor.co/spacenextdoor-logo.png" alt="Visit SpaceNextDoor" style="height: 22px; width: auto; display: block;" />
+              </a>
+            </div>
+
             <p style="margin: 0; font-size: 15px; color: #333333;">— The SpaceNextDoor Team</p>
           </div>
 
