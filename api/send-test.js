@@ -26,14 +26,14 @@ export default async function handler(req, res) {
         <div style="background: #1a3a28; border-radius: 10px; padding: 20px 24px; margin-bottom: 24px;">
           <p style="margin: 0 0 10px; font-size: 14px; font-weight: 600; color: #4aba7a;">To get set up quickly, have these ready:</p>
           <ul style="margin: 0; padding-left: 20px; color: #ffffff; font-size: 14px; line-height: 1.9;">
-            <li>A few photos of your space (garage, driveway, shed, basement, etc.)</li>
+            <li>At least 3 photos of your space (garage, driveway, shed, basement, etc.)</li>
             <li>Your bank account details for monthly payouts</li>
             <li>A piece of ID to verify your identity</li>
           </ul>
         </div>
 
         <p style="margin: 0 0 8px; font-size: 15px; line-height: 1.6; color: #333333;">Looking forward to connecting soon.</p>
-        <p style="margin: 0; font-size: 15px; color: #333333;">Matthew Shachar<br><span style="color: #888; font-size: 13px;">Co-Founder, SpaceNextDoor</span><br><a href="mailto:matthew@spacenextdoor.co" style="color: #1a3a28; font-size: 13px; text-decoration: none;">matthew@spacenextdoor.co</a></p>
+        <p style="margin: 0; font-size: 15px; color: #333333;">Matthew Shachar<br><span style="color: #888; font-size: 13px;">Co-Founder, Spacenextdoor</span><br><a href="mailto:matthew@spacenextdoor.co" style="color: #1a3a28; font-size: 13px; text-decoration: none;">matthew@spacenextdoor.co</a></p>
       </div>
 
       <!-- Footer -->
