@@ -51,7 +51,7 @@ export default async function handler(req, res) {
       'Content-Type': 'application/json',
     },
     body: JSON.stringify({
-      from: 'Matthew @ SpaceNextDoor <matthew@notifications.spacenextdoor.co>',
+      from: 'SpaceNextDoor <hello@notifications.spacenextdoor.co>',
       reply_to: 'matthew@spacenextdoor.co',
       to: 'matthew.shachar@gmail.com',
       subject: "We are almost live! let's get your listings up on Spacenextdoor.",
