@@ -13,7 +13,7 @@ export default async function handler(req, res) {
 
       <!-- Body -->
       <div style="background: #f5f4f0; padding: 40px;">
-        <h1 style="margin: 0 0 16px; font-size: 22px; font-weight: 700; color: #1a3a28;">We're almost live — let's get your space listed</h1>
+        <h1 style="margin: 0 0 16px; font-size: 22px; font-weight: 700; color: #1a3a28;">We're almost live — let's get your space listed!</h1>
         <p style="margin: 0 0 16px; font-size: 15px; line-height: 1.6; color: #333333;">Hi there,</p>
         <p style="margin: 0 0 24px; font-size: 15px; line-height: 1.6; color: #333333;">SpaceNextDoor is almost ready to launch and I'd love to get your listing up before we go live. I'll be reaching out personally next week to walk you through the setup — but in the meantime, you can grab a time directly on my calendar below.</p>
 
@@ -26,7 +26,7 @@ export default async function handler(req, res) {
         <div style="background: #1a3a28; border-radius: 10px; padding: 20px 24px; margin-bottom: 24px;">
           <p style="margin: 0 0 10px; font-size: 14px; font-weight: 600; color: #4aba7a;">To get set up quickly, have these ready:</p>
           <ul style="margin: 0; padding-left: 20px; color: #ffffff; font-size: 14px; line-height: 1.9;">
-            <li>At least 3 photos of your space (garage, driveway, shed, basement, etc.)</li>
+            <li>At least 3 photos of your space (outside of space, inside the space, and access to the space)</li>
             <li>Your bank account details for monthly payouts</li>
             <li>A piece of ID to verify your identity</li>
           </ul>
