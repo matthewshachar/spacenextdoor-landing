@@ -33,7 +33,7 @@ export default async function handler(req, res) {
         </div>
 
         <p style="margin: 0 0 8px; font-size: 15px; line-height: 1.6; color: #333333;">Looking forward to connecting soon.</p>
-        <p style="margin: 0; font-size: 15px; color: #333333;">— Matthew<br><span style="color: #888; font-size: 13px;">Founder, SpaceNextDoor</span></p>
+        <p style="margin: 0; font-size: 15px; color: #333333;">— Matthew Shachar<br><span style="color: #888; font-size: 13px;">Co-Founder, SpaceNextDoor</span><br><a href="mailto:matthew@spacenextdoor.co" style="color: #1a3a28; font-size: 13px; text-decoration: none;">matthew@spacenextdoor.co</a></p>
       </div>
 
       <!-- Footer -->
@@ -51,7 +51,8 @@ export default async function handler(req, res) {
       'Content-Type': 'application/json',
     },
     body: JSON.stringify({
-      from: 'Matthew @ SpaceNextDoor <matthew@spacenextdoor.co>',
+      from: 'Matthew @ SpaceNextDoor <matthew@notifications.spacenextdoor.co>',
+      reply_to: 'matthew@spacenextdoor.co',
       to: 'matthew.shachar@gmail.com',
       subject: "We are almost live! let's get your listings up on Spacenextdoor.",
       html: emailHtml,
