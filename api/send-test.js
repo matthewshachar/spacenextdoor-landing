@@ -32,6 +32,7 @@ export default async function handler(req, res) {
           </ul>
         </div>
 
+        <p style="margin: 0 0 24px; font-size: 15px; line-height: 1.6; color: #333333;">That said, feel free to sign up on your own anytime — it's straightforward. Simply create an account, verify your email and ID, connect your bank account, and create your listing. Most people are done in under 15 minutes.</p>
         <p style="margin: 0 0 8px; font-size: 15px; line-height: 1.6; color: #333333;">Looking forward to connecting soon.</p>
         <p style="margin: 0; font-size: 15px; color: #333333;">Matthew Shachar<br><span style="color: #888; font-size: 13px;">Co-Founder, Spacenextdoor</span><br><a href="mailto:matthew@spacenextdoor.co" style="color: #1a3a28; font-size: 13px; text-decoration: none;">matthew@spacenextdoor.co</a></p>
       </div>
