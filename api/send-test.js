@@ -12,10 +12,10 @@ export default async function handler(req, res) {
       </div>
 
       <!-- Body -->
-      <div style="background: #f5f4f0; padding: 40px;">
+      <div style="background: #ffffff; padding: 40px;">
         <h1 style="margin: 0 0 16px; font-size: 22px; font-weight: 700; color: #1a3a28;">We're almost live — let's get your space listed!</h1>
-        <p style="margin: 0 0 16px; font-size: 15px; line-height: 1.6; color: #333333;">Hi there,</p>
-        <p style="margin: 0 0 24px; font-size: 15px; line-height: 1.6; color: #333333;">SpaceNextDoor is almost ready to launch and I'd love to get your listing up before we go live. I'll be reaching out personally next week to walk you through the setup — but in the meantime, you can grab a time directly on my calendar below.</p>
+        <p style="margin: 0 0 16px; font-size: 15px; line-height: 1.6; color: #000000;">Hi there,</p>
+        <p style="margin: 0 0 24px; font-size: 15px; line-height: 1.6; color: #000000;">SpaceNextDoor is almost ready to launch and I'd love to get your listing up before we go live. I'll be reaching out personally next week to walk you through the setup — but in the meantime, you can grab a time directly on my calendar below.</p>
 
         <!-- Calendly CTA -->
         <div style="text-align: center; margin: 0 0 32px;">
@@ -32,9 +32,9 @@ export default async function handler(req, res) {
           </ul>
         </div>
 
-        <p style="margin: 0 0 24px; font-size: 15px; line-height: 1.6; color: #333333;">That said, feel free to sign up on your own anytime — it's straightforward. Simply create an account, verify your email and ID, connect your bank account, and create your listing. Most people are done in under 15 minutes.</p>
-        <p style="margin: 0 0 8px; font-size: 15px; line-height: 1.6; color: #333333;">Looking forward to connecting soon.</p>
-        <p style="margin: 0; font-size: 15px; color: #333333;">Matthew Shachar<br><span style="color: #888; font-size: 13px;">Co-Founder, Spacenextdoor</span><br><a href="mailto:matthew@spacenextdoor.co" style="color: #1a3a28; font-size: 13px; text-decoration: none;">matthew@spacenextdoor.co</a></p>
+        <p style="margin: 0 0 24px; font-size: 15px; line-height: 1.6; color: #000000;">That said, feel free to sign up on your own anytime — it's straightforward. Simply create an account, verify your email and ID, connect your bank account, and create your listing. Most people are done in under 15 minutes.</p>
+        <p style="margin: 0 0 8px; font-size: 15px; line-height: 1.6; color: #000000;">Looking forward to connecting soon.</p>
+        <p style="margin: 0; font-size: 15px; color: #000000;">Matthew Shachar<br><span style="color: #888; font-size: 13px;">Co-Founder, Spacenextdoor</span><br><a href="mailto:matthew@spacenextdoor.co" style="color: #1a3a28; font-size: 13px; text-decoration: none;">matthew@spacenextdoor.co</a></p>
       </div>
 
       <!-- Footer -->
